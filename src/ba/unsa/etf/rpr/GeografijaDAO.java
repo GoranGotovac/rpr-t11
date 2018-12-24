@@ -94,9 +94,9 @@ public class GeografijaDAO {
         dr.setGlavniGrad(grad4);
     }
 
-    Grad glavniGrad(Drzava drzava) {
+    Grad glavniGrad(String drzava) {
         for (Drzava x : drzave) {
-            if (x.getGlavniGrad().getNaziv().equals(drzava.getGlavniGrad().getNaziv())) {
+            if (x.getGlavniGrad().getNaziv().equals(drzava)) {
                 return x.getGlavniGrad();
             }
         }
