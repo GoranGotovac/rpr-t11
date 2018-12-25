@@ -1,10 +1,10 @@
 package ba.unsa.etf.rpr;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 import java.security.cert.CollectionCertStoreParameters;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -16,6 +16,24 @@ public class GeografijaDAO {
     private static GeografijaDAO instance = null;
     public ArrayList<Grad> gradovi = new ArrayList<>();
     public ArrayList<Drzava> drzave = new ArrayList<>();
+    private ObservableList<Grad> status = FXCollections.observableArrayList();
+    private ObservableList<Drzava> status2 = FXCollections.observableArrayList();
+
+    public ObservableList<Grad> getStatus() {
+        return status;
+    }
+
+    public void setStatus(ObservableList<Grad> status) {
+        this.status = status;
+    }
+
+    public ObservableList<Drzava> getStatus2() {
+        return status2;
+    }
+
+    public void setStatus2(ObservableList<Drzava> status2) {
+        this.status2 = status2;
+    }
 
     private static void initialize() {
         instance = new GeografijaDAO();
@@ -66,7 +84,22 @@ public class GeografijaDAO {
     public static void removeInstance() {
         instance = null;
     }
-
+    Drzava nadjiDrzavu2(String grad) {
+        for (Grad g: gradovi
+             ) {
+            if(g.getNaziv().equals(grad))
+                return g.getDrzava();
+        }
+        return null;
+    }
+    Grad dajGrad(String grad) {
+        for (Grad g: gradovi
+             ) {
+            if(g.getNaziv().equals(grad))
+                return g;
+        }
+        return null;
+    }
     private void upisi() {
         Grad grad1 = new Grad("Pariz", 2206488);
         Drzava drzava1 = new Drzava("Francuska", grad1);
@@ -96,7 +129,7 @@ public class GeografijaDAO {
 
     Grad glavniGrad(String drzava) {
         for (Drzava x : drzave) {
-            if (x.getGlavniGrad().getNaziv().equals(drzava)) {
+            if (x.getNaziv().equals(drzava)) {
                 return x.getGlavniGrad();
             }
         }
@@ -105,26 +138,33 @@ public class GeografijaDAO {
 
     void obrisiDrzavu(String drzava) {
         boolean b = false;
-        Drzava drzava1 = new Drzava();
+        int i= 0;
+        int j=0;
+        ArrayList<Grad> gradovi1 = new ArrayList<>();
+        ArrayList<Drzava> drzave1 = new ArrayList<>();
+        Drzava drzava2 = nadjiDrzavu(drzava);
         for (Grad g : gradovi) {
             if (g.getDrzava().getNaziv().equals(drzava)) {
-                gradovi.remove(g);
+                gradovi1.add(g);
             }
+            i++;
         }
-        for (Drzava g : drzave) {
-            if (g.getNaziv().equals(drzava)) {
-                drzave.remove(g);
+        for(Drzava x : drzave) {
+            if(x.getNaziv().equals(drzava)) {
+                drzave1.add(x);
                 b = true;
-                drzava1 = g;
             }
+            j++;
         }
+        gradovi.removeAll(gradovi1);
+        drzave.removeAll(drzave1);
         if (!b) return;
         try {
             String sql = "DELETE FROM drzava WHERE naziv = ?";
             String sql2 = "DELETE FROM grad WHERE drzava = ?";
             PreparedStatement statement = conn.prepareStatement(sql);
             PreparedStatement statement1 = conn.prepareStatement(sql2);
-            statement1.setInt(1, drzava1.getId());
+            statement1.setInt(1, drzava2.getId());
             statement1.executeUpdate();
             statement.setString(1, drzava);
             statement.executeUpdate();
@@ -182,7 +222,7 @@ public class GeografijaDAO {
             statement.setInt(3,grad.getDrzava().getId());
             statement.execute();
             for(Grad x : gradovi) {
-                if(x.getNaziv().equals(grad.getNaziv()) || x.getBrojStanovnika() == grad.getBrojStanovnika() || x.getDrzava().equals(grad.getDrzava())) {
+                if(x.getNaziv().equals(grad.getNaziv())  || x.getBrojStanovnika() == grad.getBrojStanovnika() || x.getDrzava().equals(grad.getDrzava())) {
                     gradovi.remove(x);
                 }
             }
