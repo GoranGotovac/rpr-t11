@@ -45,7 +45,7 @@ public class Controller {
 
     public void izvjestaj(ActionEvent actionEvent) {
         try {
-            new GradoviReport().showReport(model.getConn());
+            new GradoviReport().showReport(GeografijaDAO.getInstance().getConn());
         } catch (JRException e1) {
             e1.printStackTrace();
         }
