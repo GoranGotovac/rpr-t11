@@ -104,27 +104,27 @@ public class GeografijaDAO {
         Grad grad1 = new Grad("Pariz", 2206488);
         Drzava drzava1 = new Drzava("Francuska", grad1);
         grad1.setDrzava(drzava1);
-        gradovi.add(grad1);
-        drzave.add(drzava1);
+        dodajGrad(grad1);
+        drzava1.setGlavniGrad(grad1);
+        dodajDrzavu(drzava1);
         Grad grad2 = new Grad("London", 8825000);
         Drzava drzava2 = new Drzava("Velika Britanija", grad2);
         grad2.setDrzava(drzava2);
-        gradovi.add(grad2);
-        drzave.add(drzava2);
+        dodajGrad(grad2);
+        drzava2.setGlavniGrad(grad2);
+        dodajDrzavu(drzava2);
         Grad grad3 = new Grad("Manchester", 545500);
         grad3.setDrzava(drzava2);
-        gradovi.add(grad3);
+        dodajGrad(grad3);
         Grad grad4 = new Grad("Beč", 1899055);
         Drzava dr = new Drzava("Austrija", grad4);
         grad4.setDrzava(dr);
-        gradovi.add(grad4);
-        drzave.add(dr);
+        dodajGrad(grad4);
+        dr.setGlavniGrad(grad4);
+        dodajDrzavu(dr);
         Grad grad5 = new Grad("Graz", 280200);
         grad5.setDrzava(dr);
-        gradovi.add(grad5);
-        drzava1.setGlavniGrad(grad1);
-        drzava2.setGlavniGrad(grad2);
-        dr.setGlavniGrad(grad4);
+        dodajGrad(grad5);
     }
 
     Grad glavniGrad(String drzava) {
