@@ -62,48 +62,24 @@ public class Controller {
 
     }
 
-    public void bosanski(ActionEvent actionEvent) {
-        String property = "Translation_bs";
-        file.setText(ResourceBundle.getBundle(property).getString("file"));
-        help.setText(ResourceBundle.getBundle(property).getString("help"));
-        view.setText(ResourceBundle.getBundle(property).getString("view"));
-        jezik.setText(ResourceBundle.getBundle(property).getString("Language"));
-        glavniGrad.setText(ResourceBundle.getBundle(property).getString("glavnigrad"));
-        izbrsiDrzavu.setText(ResourceBundle.getBundle(property).getString("izbrsidrzavu"));
-        ispisiGradove.setText(ResourceBundle.getBundle(property).getString("ispisigradove"));
-        ispisiDrzavu.setText(ResourceBundle.getBundle(property).getString("ispisidrzavu"));
-        brojStanovnika.setText(ResourceBundle.getBundle(property).getString("brojstanovnika"));
-        izvjestaj.setText(ResourceBundle.getBundle(property).getString("izvjestaj"));
-        grad.setText(ResourceBundle.getBundle(property).getString("izaberitegrad"));
-        drzava.setText(ResourceBundle.getBundle(property).getString("izaberitedrzavu"));
-        bosanski.setText(ResourceBundle.getBundle(property).getString("bosanski"));
-        engleski.setText(ResourceBundle.getBundle(property).getString("engleski"));
-        francuski.setText(ResourceBundle.getBundle(property).getString("francuski"));
-        njemacki.setText(ResourceBundle.getBundle(property).getString("njemacki"));
-    }
-
-    public void francuski(ActionEvent actionEvent) {
-        String property = "Translation_fr";
-        file.setText(ResourceBundle.getBundle(property).getString("file"));
-        help.setText(ResourceBundle.getBundle(property).getString("help"));
-        view.setText(ResourceBundle.getBundle(property).getString("view"));
-        jezik.setText(ResourceBundle.getBundle(property).getString("Language"));
-        glavniGrad.setText(ResourceBundle.getBundle(property).getString("glavnigrad"));
-        izbrsiDrzavu.setText(ResourceBundle.getBundle(property).getString("izbrsidrzavu"));
-        ispisiGradove.setText(ResourceBundle.getBundle(property).getString("ispisigradove"));
-        ispisiDrzavu.setText(ResourceBundle.getBundle(property).getString("ispisidrzavu"));
-        brojStanovnika.setText(ResourceBundle.getBundle(property).getString("brojstanovnika"));
-        izvjestaj.setText(ResourceBundle.getBundle(property).getString("izvjestaj"));
-        grad.setText(ResourceBundle.getBundle(property).getString("izaberitegrad"));
-        drzava.setText(ResourceBundle.getBundle(property).getString("izaberitedrzavu"));
-        bosanski.setText(ResourceBundle.getBundle(property).getString("bosanski"));
-        engleski.setText(ResourceBundle.getBundle(property).getString("engleski"));
-        francuski.setText(ResourceBundle.getBundle(property).getString("francuski"));
-        njemacki.setText(ResourceBundle.getBundle(property).getString("njemacki"));
-    }
-
     public void njemacki(ActionEvent actionEvent) {
-        String property = "Translation_de";
+        String property = "aa";
+        MenuItem m = (MenuItem)actionEvent.getSource();
+        switch (m.getId()) {
+            case "bosanski":
+                property = "Translation_bs";
+                break;
+            case "njemacki":
+                property = "Translation_de";
+                break;
+            case "francuski":
+                property = "Translation_fr";
+                break;
+            case "engleski":
+                property = "Translation_en_US";
+                break;
+
+        }
         file.setText(ResourceBundle.getBundle(property).getString("file"));
         help.setText(ResourceBundle.getBundle(property).getString("help"));
         view.setText(ResourceBundle.getBundle(property).getString("view"));
@@ -115,30 +91,11 @@ public class Controller {
         brojStanovnika.setText(ResourceBundle.getBundle(property).getString("brojstanovnika"));
         izvjestaj.setText(ResourceBundle.getBundle(property).getString("izvjestaj"));
         grad.setText(ResourceBundle.getBundle(property).getString("izaberitegrad"));
-        drzava.setText(ResourceBundle.getBundle(property).getString("izaberitedrzavu"));
+        drzava.setText(ResourceBundle.getBundle(property).getString("Izaberitedrzavu"));
         bosanski.setText(ResourceBundle.getBundle(property).getString("bosanski"));
         engleski.setText(ResourceBundle.getBundle(property).getString("engleski"));
         francuski.setText(ResourceBundle.getBundle(property).getString("francuski"));
         njemacki.setText(ResourceBundle.getBundle(property).getString("njemacki"));
     }
 
-    public void engleski(ActionEvent actionEvent) {
-        String property = "Translation_en_US";
-        file.setText(ResourceBundle.getBundle(property).getString("file"));
-        help.setText(ResourceBundle.getBundle(property).getString("help"));
-        view.setText(ResourceBundle.getBundle(property).getString("view"));
-        jezik.setText(ResourceBundle.getBundle(property).getString("Language"));
-        glavniGrad.setText(ResourceBundle.getBundle(property).getString("glavnigrad"));
-        izbrsiDrzavu.setText(ResourceBundle.getBundle(property).getString("izbrsidrzavu"));
-        ispisiGradove.setText(ResourceBundle.getBundle(property).getString("ispisigradove"));
-        ispisiDrzavu.setText(ResourceBundle.getBundle(property).getString("ispisidrzavu"));
-        brojStanovnika.setText(ResourceBundle.getBundle(property).getString("brojstanovnika"));
-        izvjestaj.setText(ResourceBundle.getBundle(property).getString("izvjestaj"));
-        grad.setText(ResourceBundle.getBundle(property).getString("izaberitegrad"));
-        drzava.setText(ResourceBundle.getBundle(property).getString("izaberitedrzavu"));
-        bosanski.setText(ResourceBundle.getBundle(property).getString("bosanski"));
-        engleski.setText(ResourceBundle.getBundle(property).getString("engleski"));
-        francuski.setText(ResourceBundle.getBundle(property).getString("francuski"));
-        njemacki.setText(ResourceBundle.getBundle(property).getString("njemacki"));
-    }
 }

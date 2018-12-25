@@ -41,12 +41,22 @@ public class GeografijaDAO {
 
     public GeografijaDAO() {
         try {
-            String url = "jdbc:sqlite:baza.db";
+            String url = "jdbc:sqlite:resources/baza.db";
             conn = DriverManager.getConnection(url);
             novaTabela();
-            upisi();
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
+
+            try{ PreparedStatement stmt = conn.prepareStatement("SELECT * FROM grad WHERE naziv = ?");
+                stmt.setString(1,"Beč");
+                ResultSet rs =stmt.executeQuery();
+                if(!rs.next() || rs.isClosed()) {
+
+                    upisi();
+                }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } }
+        catch (Exception e) {
+                e.printStackTrace();
         }
     }
 

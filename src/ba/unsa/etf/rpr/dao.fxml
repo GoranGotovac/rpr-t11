@@ -71,10 +71,10 @@
                <items>
                   <Menu fx:id="jezik" mnemonicParsing="false" text="%Language">
                     <items>
-                        <MenuItem fx:id="bosanski" mnemonicParsing="false" onAction="#bosanski" text="%bosanski" />
-                      <MenuItem fx:id="francuski" mnemonicParsing="false" onAction="#francuski" text="%francuski" />
+                        <MenuItem fx:id="bosanski" mnemonicParsing="false" onAction="#njemacki" text="%bosanski" />
+                      <MenuItem fx:id="francuski" mnemonicParsing="false" onAction="#njemacki" text="%francuski" />
                         <MenuItem fx:id="njemacki" mnemonicParsing="false" onAction="#njemacki" text="%njemacki" />
-                        <MenuItem fx:id="engleski" mnemonicParsing="false" onAction="#engleski" text="%engleski" />
+                        <MenuItem fx:id="engleski" mnemonicParsing="false" onAction="#njemacki" text="%engleski" />
                     </items>
                   </Menu>
                </items>
