@@ -22,6 +22,7 @@
 		<property name="com.jaspersoft.studio.field.label" value="drzava"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="grad"/>
 	</field>
+	<sortField name="broj_stanovnika"/>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
