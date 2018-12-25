@@ -29,7 +29,7 @@ public class Main extends Application {
         Scanner ulaz = new Scanner(System.in);
         String s = ulaz.nextLine();
         Grad grad = GeografijaDAO.getInstance().glavniGrad(s);
-        System.out.println("Glavni grad države " + grad.getDrzava().getNaziv()+" je " + grad.getNaziv());
+        System.out.println("Glavni upisGrad države " + grad.getDrzava().getNaziv()+" je " + grad.getNaziv());
     }
 
     public static void main(String[] args) {

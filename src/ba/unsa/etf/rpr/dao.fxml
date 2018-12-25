@@ -29,61 +29,57 @@
       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
-      <Label text="%Izaberitedrzavu" GridPane.rowIndex="2">
+      <Label fx:id="drzava" text="%Izaberitedrzavu" GridPane.rowIndex="2">
          <GridPane.margin>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </GridPane.margin>
       </Label>
-      <Button mnemonicParsing="false" onAction="#glavniGrad" text="%glavnigrad" GridPane.rowIndex="3">
+      <Button fx:id="glavniGrad" mnemonicParsing="false" onAction="#glavniGrad" text="%glavnigrad" GridPane.rowIndex="3">
          <GridPane.margin>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </GridPane.margin></Button>
-      <Button mnemonicParsing="false" onAction="#izbrsi" text="%izbrsidrzavu" GridPane.columnIndex="1" GridPane.rowIndex="3">
+      <Button fx:id="izbrsiDrzavu" mnemonicParsing="false" onAction="#izbrsi" text="%izbrsidrzavu" GridPane.columnIndex="1" GridPane.rowIndex="3">
          <GridPane.margin>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </GridPane.margin></Button>
-      <Button mnemonicParsing="false" onAction="#ispisi" prefHeight="31.0" prefWidth="309.0" text="%ispisigradove" GridPane.columnSpan="2" GridPane.rowIndex="4" />
+      <Button fx:id="ispisiGradove" mnemonicParsing="false" onAction="#ispisi" prefHeight="31.0" prefWidth="309.0" text="%ispisigradove" GridPane.columnSpan="2" GridPane.rowIndex="4" />
       <Separator orientation="VERTICAL" prefHeight="338.0" prefWidth="127.0" GridPane.columnIndex="2" GridPane.rowIndex="2" GridPane.rowSpan="3" />
-      <Button mnemonicParsing="false" onAction="#ispisiDrzavu" text="%ispisidrzavu" GridPane.columnIndex="3" GridPane.rowIndex="3">
+      <Button fx:id="ispisiDrzavu" mnemonicParsing="false" onAction="#ispisiDrzavu" text="%ispisidrzavu" GridPane.columnIndex="3" GridPane.rowIndex="3">
          <GridPane.margin>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </GridPane.margin>
       </Button>
-      <Button mnemonicParsing="false" onAction="#brojStanovnika" text="%brojstanovnika" GridPane.columnIndex="4" GridPane.rowIndex="3">
+      <Button fx:id="brojStanovnika" mnemonicParsing="false" onAction="#brojStanovnika" text="%brojstanovnika" GridPane.columnIndex="4" GridPane.rowIndex="3">
          <GridPane.margin>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </GridPane.margin>
       </Button>
-      <Label text="%izaberitegrad" GridPane.columnIndex="3" GridPane.rowIndex="2">
+      <Label fx:id="grad" text="%izaberitegrad" GridPane.columnIndex="3" GridPane.rowIndex="2">
          <GridPane.margin>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </GridPane.margin>
       </Label>
-      <TextField fx:id="drzava" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-      <TextField fx:id="grad" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+      <TextField fx:id="upisDrzava" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+      <TextField fx:id="upisGrad" GridPane.columnIndex="4" GridPane.rowIndex="2" />
       <Label fx:id="text1" prefHeight="86.0" prefWidth="345.0" GridPane.columnSpan="2" GridPane.rowIndex="5" />
       <Label fx:id="text2" prefHeight="33.0" prefWidth="287.0" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="5" />
-      <Button mnemonicParsing="false" onAction="#izvjestaj" prefHeight="31.0" prefWidth="306.0" text="%izvjestaj" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="4" />
+      <Button fx:id="izvjestaj" mnemonicParsing="false" onAction="#izvjestaj" prefHeight="31.0" prefWidth="306.0" text="%izvjestaj" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="4" />
       <MenuBar prefHeight="32.0" prefWidth="584.0" GridPane.columnSpan="5" GridPane.rowIndex="1">
         <menus>
-          <Menu mnemonicParsing="false" text="%file">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Close" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="%view">
+          <Menu fx:id="file" mnemonicParsing="false" text="%file" />
+          <Menu fx:id="view" mnemonicParsing="false" text="%view">
                <items>
-                  <Menu mnemonicParsing="false" text="%Language">
+                  <Menu fx:id="jezik" mnemonicParsing="false" text="%Language">
                     <items>
-                        <MenuItem mnemonicParsing="false" text="%bosanski" />
-                      <MenuItem mnemonicParsing="false" text="%francuski" />
-                        <MenuItem mnemonicParsing="false" text="%njemacki" />
-                        <MenuItem mnemonicParsing="false" text="%engleski" />
+                        <MenuItem fx:id="bosanski" mnemonicParsing="false" onAction="#bosanski" text="%bosanski" />
+                      <MenuItem fx:id="francuski" mnemonicParsing="false" onAction="#francuski" text="%francuski" />
+                        <MenuItem fx:id="njemacki" mnemonicParsing="false" onAction="#njemacki" text="%njemacki" />
+                        <MenuItem fx:id="engleski" mnemonicParsing="false" onAction="#engleski" text="%engleski" />
                     </items>
                   </Menu>
                </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="%help">
+          <Menu fx:id="help" mnemonicParsing="false" text="%help">
             <items>
               <MenuItem mnemonicParsing="false" text="About" />
             </items>
