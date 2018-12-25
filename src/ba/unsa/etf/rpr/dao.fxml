@@ -29,32 +29,32 @@
       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
-      <Label text="%Izaberite drzavu" GridPane.rowIndex="2">
+      <Label text="%Izaberitedrzavu" GridPane.rowIndex="2">
          <GridPane.margin>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </GridPane.margin>
       </Label>
-      <Button mnemonicParsing="false" onAction="#glavniGrad" text="%glavni grad" GridPane.rowIndex="3">
+      <Button mnemonicParsing="false" onAction="#glavniGrad" text="%glavnigrad" GridPane.rowIndex="3">
          <GridPane.margin>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </GridPane.margin></Button>
-      <Button mnemonicParsing="false" onAction="#izbrsi" text="%izbrsi drzavu" GridPane.columnIndex="1" GridPane.rowIndex="3">
+      <Button mnemonicParsing="false" onAction="#izbrsi" text="%izbrsidrzavu" GridPane.columnIndex="1" GridPane.rowIndex="3">
          <GridPane.margin>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </GridPane.margin></Button>
-      <Button mnemonicParsing="false" onAction="#ispisi" prefHeight="31.0" prefWidth="309.0" text="%ispisi gradove" GridPane.columnSpan="2" GridPane.rowIndex="4" />
+      <Button mnemonicParsing="false" onAction="#ispisi" prefHeight="31.0" prefWidth="309.0" text="%ispisigradove" GridPane.columnSpan="2" GridPane.rowIndex="4" />
       <Separator orientation="VERTICAL" prefHeight="338.0" prefWidth="127.0" GridPane.columnIndex="2" GridPane.rowIndex="2" GridPane.rowSpan="3" />
-      <Button mnemonicParsing="false" onAction="#ispisiDrzavu" text="%ispisi drzavu" GridPane.columnIndex="3" GridPane.rowIndex="3">
+      <Button mnemonicParsing="false" onAction="#ispisiDrzavu" text="%ispisidrzavu" GridPane.columnIndex="3" GridPane.rowIndex="3">
          <GridPane.margin>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </GridPane.margin>
       </Button>
-      <Button mnemonicParsing="false" onAction="#brojStanovnika" text="%broj stanovnika" GridPane.columnIndex="4" GridPane.rowIndex="3">
+      <Button mnemonicParsing="false" onAction="#brojStanovnika" text="%brojstanovnika" GridPane.columnIndex="4" GridPane.rowIndex="3">
          <GridPane.margin>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </GridPane.margin>
       </Button>
-      <Label text="%izaberite grad" GridPane.columnIndex="3" GridPane.rowIndex="2">
+      <Label text="%izaberitegrad" GridPane.columnIndex="3" GridPane.rowIndex="2">
          <GridPane.margin>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </GridPane.margin>
@@ -72,9 +72,16 @@
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="%view">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
-            </items>
+               <items>
+                  <Menu mnemonicParsing="false" text="%Language">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="%bosanski" />
+                      <MenuItem mnemonicParsing="false" text="%francuski" />
+                        <MenuItem mnemonicParsing="false" text="%njemacki" />
+                        <MenuItem mnemonicParsing="false" text="%engleski" />
+                    </items>
+                  </Menu>
+               </items>
           </Menu>
           <Menu mnemonicParsing="false" text="%help">
             <items>
