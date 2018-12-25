@@ -126,7 +126,9 @@ public class GeografijaDAO {
         grad5.setDrzava(dr);
         dodajGrad(grad5);
     }
-
+    public Connection getConn() {
+        return conn;
+    }
     Grad glavniGrad(String drzava) {
         for (Drzava x : drzave) {
             if (x.getNaziv().equals(drzava)) {
