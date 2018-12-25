@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import net.sf.jasperreports.engine.JRException;
 
 import javax.management.StringValueExp;
 
@@ -40,5 +41,14 @@ public class Controller {
     public void brojStanovnika(ActionEvent actionEvent) {
         System.out.println(grad.getText()+" ima " + GeografijaDAO.getInstance().dajGrad(grad.getText()));
         text2.setText(""+GeografijaDAO.getInstance().dajGrad(grad.getText()).getBrojStanovnika());
+    }
+
+    public void izvjestaj(ActionEvent actionEvent) {
+        try {
+            new GradoviReport().showReport(model.getConn());
+        } catch (JRException e1) {
+            e1.printStackTrace();
+        }
+
     }
 }
