@@ -41,7 +41,7 @@ public class GeografijaDAO {
 
     public GeografijaDAO() {
         try {
-            String url = "jdbc:sqlite:resources/baza.db";
+            String url = "jdbc:sqlite:baza.db";
             conn = DriverManager.getConnection(url);
             novaTabela();
 
